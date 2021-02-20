@@ -8,7 +8,7 @@ export default function App() {
   const [password, setPassword] = useState('');
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Hi does this work</Text>
       <StatusBar style="auto" />
       <View style={styles.inputView}>
         <TextInput
@@ -60,3 +60,4 @@ const styles = StyleSheet.create({
   }
 
 });
+
