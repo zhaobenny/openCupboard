@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View,  Button} from 'react-native';
+import 'react-native-gesture-handler';
 
 export default function App() {
   const [email, setEmail] = useState('');
@@ -26,6 +27,12 @@ export default function App() {
           onChangeText={(password) => setPassword(password)}
         />
       </View>
+      <View >
+        <Button title="Outline button"
+        type="outline"
+        />
+      </View>
+
 
     </View>
   );
