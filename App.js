@@ -19,7 +19,8 @@ export default function App() {
         component={login}
         options={{ title: 'Welcome' }}
       />
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Home"
+      component={home} />
     </Stack.Navigator>
   </NavigationContainer>
   )
@@ -61,7 +62,7 @@ const login =  ({ navigation }) => {
   );
 }
 
-const Home =  ({ navigation }) => {
+const home =  ({ navigation }) => {
   return(
       <View style={styles.container}>
         <Text>HOME PAGE</Text>
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
   },
   inputView: {
     borderRadius: 30,
-    width: "70%",
+    width: "100%",
     height: 45,
     marginBottom: 20,
     alignItems: "center",
