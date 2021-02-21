@@ -4,6 +4,7 @@ import 'react-native-gesture-handler';
 import React, { useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createStackNavigator();
 
@@ -21,7 +22,7 @@ export default function App() {
       />
       <Stack.Screen name="Home"
       component={home} />
-      <Stack.Screen name="weekly"
+      <Stack.Screen name="Weekly"
       component={weekly} />
     </Stack.Navigator>
   </NavigationContainer>
@@ -69,16 +70,53 @@ const login =  ({ navigation }) => {
   );
 }
 
-const home = ({navigation}) => {
+
+
+const Tab = createBottomTabNavigator();
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={home} />
+      <Tab.Screen name="weekly" component={weekly} />
+    </Tab.Navigator>
+  );
+}
+
+
+const home = ({}) => {
+  return(
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={homeComponent} />
+      <Tab.Screen name="weekly" component={weekly} />
+      <Tab.Screen name="resources" component={resources} />
+      <Tab.Screen name="account" component={account} />
+    </Tab.Navigator>
+  )
+}
+
+const homeComponent = ({}) => {
   return(
     <View style={styles.container}>
-      <Text onPress={() =>
-            navigation.navigate('weekly')
-        }>WEEKLY</Text>
+      <Text>EAT AAA</Text>
     </View>
   )
 }
 
+const resources = ({}) => {
+  return(
+    <View style={styles.container}>
+      <Text>imagine resources</Text>
+    </View>
+  )
+}
+
+const account = ({}) => {
+  return(
+    <View style={styles.container}>
+      <Text>imagine account</Text>
+    </View>
+  )
+}
 
 const weekly =  ({ navigation }) => {
   const DATA = [
