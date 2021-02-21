@@ -69,7 +69,6 @@ const login =  ({ navigation }) => {
             {
               width: "100%",
               maxWidth: 300,
-              alignItems: "left",
             }
           }>
             <TouchableOpacity
@@ -107,15 +106,15 @@ const ForgotPassword =  ({ navigation }) => {
   return(
       <View style={styles.container}>
         <View style={{marginBottom: 20}}>
-          <Text style={{fontSize: 36, marginBottom: 25,}}>Password reset</Text>
-          <Text>Forgot Password?</Text>
-          <Text>Please enter the email used to sign up and we'll send you'll a reset link</Text>
+          <Text style={{fontSize: 36, marginBottom: 25, paddingLeft: 20}}>Password reset</Text>
+          <Text style={{ paddingLeft: 20}}>Forgot Password?</Text>
+          <Text style={{paddingLeft: 20}}>Please enter the email used to sign up and we'll send you'll a reset link</Text>
         </View>
 
         <View style={styles.input}>
           <TextInput
               style={styles.TextInput}
-              placeholder="Email"
+              placeholder="Type email here"
               placeholderTextColor="#003f5c"
           />
         </View>
@@ -201,7 +200,12 @@ const resources = ({}) => {
 const account = ({}) => {
   return(
     <View style={styles.container}>
-      <Text>imagine account</Text>
+      <View style={styles.myAccount}>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Your Account</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Past Orders</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Notifcation</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Settings</Text></TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -306,6 +310,19 @@ const styles = StyleSheet.create({
     height: 50,
     padding: 10,
     marginLeft: 20,
+  },
+  myAccount: {
+    borderRadius: 30,
+    width: 300,
+    height: 300,
+    backgroundColor:"#c6ebc9",
+    alignItems:'flex-start',
+    justifyContent:'center',
+    fontSize: 30,
+  },
+  settingItem: {
+    paddingVertical: 15,
+    paddingLeft: 10,
   },
 
   forgot_button:{
