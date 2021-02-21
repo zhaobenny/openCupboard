@@ -149,18 +149,10 @@ const account = ({}) => {
   return(
     <View style={styles.container}>
       <View style={styles.myAccount}>
-      <TouchableOpacity style={{
-        paddingBottom: 30,
-            }}>Your Account</TouchableOpacity>
-      <TouchableOpacity style={{
-        paddingBottom: 30,
-      }}>Past Orders</TouchableOpacity>
-      <TouchableOpacity style={{
-        paddingBottom: 30,
-      }}>Notifications</TouchableOpacity>
-      <TouchableOpacity style={{
-        paddingBottom: 10,
-      }}>Settings</TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Your Account</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Past Orders</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Notifcation</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Settings</Text></TouchableOpacity>
       </View>
     </View>
   )
@@ -272,9 +264,13 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
     backgroundColor:"#c6ebc9",
-    alignItems:'center',
+    alignItems:'flex-start',
     justifyContent:'center',
     fontSize: 30,
+  },
+  settingItem: {
+    paddingVertical: 15,
+    paddingLeft: 10,
   }
 });
 
