@@ -81,7 +81,7 @@ const Home =  ({ navigation }) => {
 
 const ForgotPassword =  ({ navigation }) => {
   return(
-      <View style={styles.forgotPage}>
+      <View style={styles.container}>
       <Text>Password reset</Text>     
 
         <h2>Forgot Password?</h2>
@@ -142,7 +142,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 50,
     width: 300,
-    marginTop: 250,
     backgroundColor:"#c6ebc9",
     alignItems:'center',
     justifyContent:'bottom',
