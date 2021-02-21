@@ -52,9 +52,11 @@ const login =  ({ navigation }) => {
             />
           </View>
 
-          <TouchableOpacity onPress={() =>
-            navigation.navigate('ForgotPassword')}>
-            <Text style={styles.forgot_button}>Forgot Password?</Text>
+          <TouchableOpacity>
+            <Text onPress={() =>
+            navigation.navigate('ForgotPassword')
+            }
+            style={styles.forgot_button}>Forgot Password?</Text>
           </TouchableOpacity>
 
           <View >
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
     width: 50,
   },
   forgot_button:{
-    color: '6495ed',
+    color: '#6495ed',
   }
 
 });
