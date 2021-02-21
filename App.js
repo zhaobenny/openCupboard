@@ -110,7 +110,7 @@ const ForgotPassword =  ({ navigation }) => {
   return(
       <View style={styles.container}>
         <View style={{marginBottom: 20}}>
-          <Text style={{fontSize: 36, marginBottom: 25, paddingLeft: 20}}>Password reset</Text>
+        <Text style={{fontSize: 36, marginBottom: 25, paddingLeft: 20}}>Password reset</Text>
           <Text style={{ paddingLeft: 20}}>Forgot Password?</Text>
           <Text style={{paddingLeft: 20}}>Please enter the email used to sign up and we'll send you'll a reset link</Text>
         </View>
@@ -189,7 +189,15 @@ const home = ({}) => {
 const homeComponent = ({}) => {
   return(
     <View style={styles.container}>
-      <Text>EAT AAAA</Text>
+      <Text style={{fontSize: 28, marginBottom: 10}}>Fill in your order details</Text>
+      <View style={styles.inputView}>
+          <TextInput
+              style={styles.TextInput}
+              placeholder="Address"
+              placeholderTextColor="#003f5c"
+          />
+      </View>
+      <Text style={{fontSize: 28, marginBottom: 10}}>When:</Text>
     </View>
   )
 }
@@ -341,6 +349,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginLeft: 20,
   },
+
   myAccount: {
     width: 300,
     height: 300,
