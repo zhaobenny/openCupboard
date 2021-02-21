@@ -184,7 +184,14 @@ const home = ({}) => {
 const homeComponent = ({}) => {
   return(
     <View style={styles.container}>
-      <Text>EAT AAAA</Text>
+      <Text style={{fontSize: 28}}>Fill in your order details</Text>
+      <View style={styles.input}>
+          <TextInput
+              style={styles.TextInput}
+              placeholder="Address"
+              placeholderTextColor="#003f5c"
+          />
+        </View>
     </View>
   )
 }
@@ -200,7 +207,12 @@ const resources = ({}) => {
 const account = ({}) => {
   return(
     <View style={styles.container}>
-      <Text>imagine account</Text>
+      <View style={styles.myAccount}>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Your Account</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Past Orders</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Notifcation</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Settings</Text></TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -305,6 +317,20 @@ const styles = StyleSheet.create({
     height: 50,
     padding: 10,
     marginLeft: 20,
+  },
+
+  myAccount: {
+    width: 300,
+    height: 300,
+    justifyContent:'center',
+    fontSize: 30,
+  },
+  settingItem: {
+    paddingVertical: 15,
+    paddingLeft: 10,
+    borderRadius: 10,
+    backgroundColor:"#c6ebc9",
+    margin: 10,
   },
 
   forgot_button:{
