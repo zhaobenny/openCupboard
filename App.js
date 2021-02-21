@@ -192,7 +192,13 @@ const homeComponent = ({}) => {
 const resources = ({}) => {
   return(
     <View style={styles.container}>
-      <Text>imagine resources</Text>
+      <View style={styles.myAccount}>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24, fontWeight: 'bold'}}>Children's Programs</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Upcoming Events</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Greater Vancouver Food Bank Announcements</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Community Agency Partners</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24, fontWeight: 'bold'}}>Need More Support</Text></TouchableOpacity>      
+      </View>
     </View>
   )
 }
