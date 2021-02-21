@@ -7,4 +7,4 @@ A (imcomplete) protoype of an app to improve the experience of food bank users v
   - Resources and support
   - Recommended recipes
   
-Built for the Stormhacks hackathon using React Native.
+Built for the Stormhacks 2021 hackathon using React Native.
