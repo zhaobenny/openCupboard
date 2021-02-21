@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View,  Button} from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity} from 'react-native';
 import 'react-native-gesture-handler';
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -46,16 +46,30 @@ const login =  ({ navigation }) => {
               style={styles.TextInput}
               placeholder="Password"
               placeholderTextColor="#003f5c"
-              secureTextEntry={true}w
+              secureTextEntry={true}
               onChangeText={(password) => setPassword(password)}
             />
           </View>
-          <View style={styles.Button}>
-            <Button title="Sign In"
+          <View>
+          <TouchableOpacity
+            style={{
+              borderRadius: 10,
+              height: 50,
+              width: 300,
+              backgroundColor:"#c6ebc9",
+              alignItems:'center',
+              justifyContent:'center',
+            }}
             onPress={() =>
-              navigation.navigate('Home')
+            navigation.navigate('Home')
             }
-            />
+          >
+            <Text style={{
+              fontSize:16,
+              color: "black",
+            }}
+            >Sign In</Text>
+          </TouchableOpacity>
           </View>
         </View>
   );
@@ -91,9 +105,5 @@ const styles = StyleSheet.create({
     padding: 10,
     marginLeft: 20,
   },
-  Button: {
-    width: 50,
-  }
-
 });
 
