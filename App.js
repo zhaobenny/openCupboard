@@ -27,8 +27,11 @@ export default function App() {
           onChangeText={(password) => setPassword(password)}
         />
       </View>
-      <View >
-        <Button title="Outline button"
+      <View style={styles.forgot_Password}>
+        <Text style={styles.forgot_button}>Forgot Password?</Text>
+      </View>
+      <View style={styles.Button}>
+        <Button title="Submit"
         type="outline"
         />
       </View>
@@ -57,6 +60,9 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     marginLeft: 20,
+  },
+  Button: {
+    width: 80,
   }
 
 });
