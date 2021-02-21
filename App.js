@@ -215,15 +215,18 @@ const weekly =  ({ navigation }) => {
   const DATA = [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'First Item',
+      title: 'Assorted Season Fruits',
+      text: 'BC Tree Fruits',
+      image: './assets/icon.png',
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Second Item',
+      title: '2021 Canley Cup',
+      text: "Vancouver District Students' Council",
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
+      title: 'Canned Soup Recipe',
     },
     {
       id: '58694a0f-3da1-411f-bd96-145571e29d72',
@@ -252,7 +255,7 @@ const weekly =  ({ navigation }) => {
   const renderItem = ({ item }) => (
     <Item title={item.title} />
   );
-
+  
   return(
     <SafeAreaView style={styles.container}>
         <Text style={{
@@ -313,17 +316,17 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   myAccount: {
-    borderRadius: 30,
     width: 300,
     height: 300,
-    backgroundColor:"#c6ebc9",
-    alignItems:'flex-start',
     justifyContent:'center',
     fontSize: 30,
   },
   settingItem: {
     paddingVertical: 15,
     paddingLeft: 10,
+    borderRadius: 10,
+    backgroundColor:"#c6ebc9",
+    margin: 10,
   },
 
   forgot_button:{
