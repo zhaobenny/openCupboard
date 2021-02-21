@@ -30,6 +30,8 @@ export default function App() {
       <Stack.Screen name="childrenPage"
       component={childrenPage} />
     </Stack.Navigator>
+    <Stack.Screen name="childrenPage"
+    component={childrenPage}></Stack.Screen>
   </NavigationContainer>
   )
 }
@@ -142,6 +144,7 @@ const Tab = createBottomTabNavigator();
 // this is really for tab navigation
 const home = ({}) => {
   return(
+    
     <Tab.Navigator
     tabBarOptions={{
       style: {
@@ -195,7 +198,7 @@ const childrenPage = ({}) => {
   return(
     <View style={styles.container}>
       <View style={styles.myAccount}>
-      <TouchableOpacity style={styles.container}><Text style={{fontSize: 24, fontWeight: 'bold', margin: 10,}}>Select a program to find out more</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.container}><Text style={{fontSize: 24, fontWeight: 'bold', paddingBottom: 100, margin: 10}}>Select a program to find out more</Text></TouchableOpacity>
       <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Baby Steps {'\n'}Age 0-2</Text></TouchableOpacity>
       <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Preschooler Packs {'\n'}Age 3-5</Text></TouchableOpacity>
       <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Grade Schooler Packs {'\n'}Age 6-12</Text></TouchableOpacity>
