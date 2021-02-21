@@ -5,6 +5,8 @@ import React, { useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 
 const Stack = createStackNavigator();
 
@@ -83,14 +85,46 @@ const login =  ({ navigation }) => {
 
 const Tab = createBottomTabNavigator();
 
-// this is really for tabs
+// this is really for tab navigation
 const home = ({}) => {
   return(
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={homeComponent} />
-      <Tab.Screen name="Weekly" component={weekly} />
-      <Tab.Screen name="Resources" component={resources} />
-      <Tab.Screen name="Account" component={account} />
+    <Tab.Navigator
+    tabBarOptions={{
+      style: {
+        height: 65
+      },
+      showLabel: false,
+      activeTintColor: 'black',
+      inactiveTintColor: 'rgba(0, 0, 0, 0.25)',
+      activeBackgroundColor: '#aa8976',
+      inactiveBackgroundColor: '#aa8976',
+
+    }}>
+      <Tab.Screen name="Home" component={homeComponent} options={{
+      tabBarLabel: '',
+      tabBarIcon:({color, size})=>{
+       return <Ionicons name='ios-home' size={size} color={color} />
+       }
+
+    }}/>
+      <Tab.Screen name="Weekly" component={weekly} options={{
+      tabBarLabel: '',
+      tabBarIcon:({color, size})=>{
+        return <Ionicons name='book-outline' size={size} color={color} />
+        }
+    }}/>
+      <Tab.Screen name="Resources" component={resources} options={{
+      tabBarLabel: '',
+      tabBarIcon:({color, size})=>{
+        return <Ionicons name='albums-outline' size={size} color={color} />
+        }
+    }}/>
+      <Tab.Screen name="Account" component={account} options={{
+      tabBarLabel: '',
+      tabBarIcon:({color, size})=>{
+        return <Ionicons name='person-circle-outline' size={size} color={color} />
+        }
+    }}/>
     </Tab.Navigator>
   )
 }
@@ -98,7 +132,7 @@ const home = ({}) => {
 const homeComponent = ({}) => {
   return(
     <View style={styles.container}>
-      <Text>EAT AAA</Text>
+      <Text>EAT AAAA</Text>
     </View>
   )
 }
