@@ -88,7 +88,7 @@ const login =  ({ navigation }) => {
           <View>
           <TouchableOpacity style={styles.SignIn}
             onPress={() =>
-            navigation.navigate('Home')
+            navigation.navigate('Login')
             }
           >
             <Text style={{
