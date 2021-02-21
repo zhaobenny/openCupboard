@@ -50,7 +50,7 @@ const login =  ({ navigation }) => {
               onChangeText={(password) => setPassword(password)}
             />
           </View>
-          <View >
+          <View style={styles.Button}>
             <Button title="Sign In"
             onPress={() =>
               navigation.navigate('Home')
@@ -90,6 +90,9 @@ const styles = StyleSheet.create({
     height: 50,
     padding: 10,
     marginLeft: 20,
+  },
+  Button: {
+    width: 50,
   }
 
 });
