@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, SafeAreaView, FlatList } from 'react-native';
 import 'react-native-gesture-handler';
 import React, { useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,8 @@ export default function App() {
       />
       <Stack.Screen name="Home"
       component={home} />
+      <Stack.Screen name="Weekly"
+      component={weekly} />
     </Stack.Navigator>
   </NavigationContainer>
   )
@@ -67,11 +70,121 @@ const login =  ({ navigation }) => {
   );
 }
 
-const home =  ({ navigation }) => {
+
+
+const Tab = createBottomTabNavigator();
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={home} />
+      <Tab.Screen name="weekly" component={weekly} />
+    </Tab.Navigator>
+  );
+}
+
+
+const home = ({}) => {
   return(
-      <View style={styles.container}>
-        <Text>HOME PAGE</Text>
-      </View>
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={homeComponent} />
+      <Tab.Screen name="weekly" component={weekly} />
+      <Tab.Screen name="resources" component={resources} />
+      <Tab.Screen name="account" component={account} />
+    </Tab.Navigator>
+  )
+}
+
+const homeComponent = ({}) => {
+  return(
+    <View style={styles.container}>
+      <Text>EAT AAA</Text>
+    </View>
+  )
+}
+
+const resources = ({}) => {
+  return(
+    <View style={styles.container}>
+      <Text>imagine resources</Text>
+    </View>
+  )
+}
+
+const account = ({}) => {
+  return(
+    <View style={styles.container}>
+      <Text>imagine account</Text>
+    </View>
+  )
+}
+
+const weekly =  ({ navigation }) => {
+  const DATA = [
+    {
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      title: 'First Item',
+    },
+    {
+      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+      title: 'Second Item',
+    },
+    {
+      id: '58694a0f-3da1-471f-bd96-145571e29d72',
+      title: 'Third Item',
+    },
+    {
+      id: '58694a0f-3da1-411f-bd96-145571e29d72',
+      title: 'Fifth Item',
+    },
+    {
+      id: '58694a0f-2da1-471f-bd96-145571e29d72',
+      title: 'Sixth Item',
+    },
+    {
+      id: '53694a0f-2da1-471f-bd96-145571e29d72',
+      title: 'Ninth Item',
+    },
+  ];
+
+  const Item = ({ title }) => (
+    <View style={{
+      backgroundColor: '#f9c2ff',
+      padding: 20,
+      marginVertical: 8,
+      marginHorizontal: 16,}}>
+      <Text style={{fontSize: 32,}}>{title}</Text>
+    </View>
+  );
+
+  const renderItem = ({ item }) => (
+    <Item title={item.title} />
+  );
+
+  return(
+    <SafeAreaView style={styles.container}>
+        <Text style={{
+              fontWeight: 'bold',
+              fontSize:32,
+              paddingTop: 50,
+              color: "black",
+            }}>This week's food items</Text>
+        <Text style={{
+              alignSelf: 'center',
+              paddingLeft: 20,
+              paddingTop: 10,
+              fontSize: 16,
+              color: "black",
+            }}>Click the picture to get a quick and easy recommended recipe</Text>
+      <FlatList
+      data={DATA}
+      renderItem={renderItem}
+      keyExtractor={item => item.id}
+      style={{
+        width: '100%',
+        maxWidth: 500,
+    }}
+      />
+     </SafeAreaView>
   )
 }
 
