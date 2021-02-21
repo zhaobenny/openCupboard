@@ -184,14 +184,15 @@ const home = ({}) => {
 const homeComponent = ({}) => {
   return(
     <View style={styles.container}>
-      <Text style={{fontSize: 28}}>Fill in your order details</Text>
-      <View style={styles.input}>
+      <Text style={{fontSize: 28, marginBottom: 10}}>Fill in your order details</Text>
+      <View style={styles.inputView}>
           <TextInput
               style={styles.TextInput}
               placeholder="Address"
               placeholderTextColor="#003f5c"
           />
-        </View>
+      </View>
+      <Text style={{fontSize: 28, marginBottom: 10}}>When:</Text>
     </View>
   )
 }
