@@ -69,7 +69,6 @@ const login =  ({ navigation }) => {
             {
               width: "100%",
               maxWidth: 300,
-              alignItems: "Left",
             }
           }>
             <TouchableOpacity
@@ -107,15 +106,15 @@ const ForgotPassword =  ({ navigation }) => {
   return(
       <View style={styles.container}>
         <View style={{marginBottom: 20}}>
-          <Text style={{fontSize: 36, marginBottom: 25,}}>Password reset</Text>
-          <Text>Forgot Password?</Text>
-          <Text>Please enter the email used to sign up and we'll send you'll a reset link</Text>
+          <Text style={{fontSize: 36, marginBottom: 25, paddingLeft: 20}}>Password reset</Text>
+          <Text style={{ paddingLeft: 20}}>Forgot Password?</Text>
+          <Text style={{paddingLeft: 20}}>Please enter the email used to sign up and we'll send you'll a reset link</Text>
         </View>
 
         <View style={styles.input}>
           <TextInput
               style={styles.TextInput}
-              placeholder="Email"
+              placeholder="Type email here"
               placeholderTextColor="#003f5c"
           />
         </View>
