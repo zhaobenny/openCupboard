@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View,  Button} from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity} from 'react-native';
 import 'react-native-gesture-handler';
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -31,12 +31,12 @@ const login =  ({ navigation }) => {
   const [password, setPassword] = useState('');
   return (
       <View style={styles.container}>
-          <Text>Hi does this work</Text>
+          <Text>INSERT PNG</Text>
           <StatusBar style="auto" />
           <View style={styles.inputView}>
             <TextInput
               style={styles.TextInput}
-              placeholder="Email."
+              placeholder="Email"
               placeholderTextColor="#003f5c"
               onChangeText={(email) => setEmail(email)}
             />
@@ -44,19 +44,24 @@ const login =  ({ navigation }) => {
           <View style={styles.inputView}>
             <TextInput
               style={styles.TextInput}
-              placeholder="Password."
+              placeholder="Password"
               placeholderTextColor="#003f5c"
-              secureTextEntry={true}w
+              secureTextEntry={true}
               onChangeText={(password) => setPassword(password)}
             />
           </View>
-          <View >
-            <Button title="Outline button"
-            type="outline"
+          <View>
+          <TouchableOpacity style={styles.SignIn}
             onPress={() =>
-              navigation.navigate('Home')
+            navigation.navigate('Home')
             }
-            />
+          >
+            <Text style={{
+              fontSize:16,
+              color: "black",
+            }}
+            >Sign In</Text>
+          </TouchableOpacity>
           </View>
         </View>
   );
@@ -78,18 +83,28 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   inputView: {
-    borderRadius: 30,
     width: "100%",
+    maxWidth: 300,
     height: 45,
     marginBottom: 20,
     alignItems: "center",
+    borderBottomWidth: 0.5,
   },
-  TextInput: {
+  SignIn: {
+    borderRadius: 10,
     height: 50,
-    flex: 1,
+    width: 300,
+    backgroundColor:"#c6ebc9",
+    alignItems:'center',
+    justifyContent:'center',
+  },
+
+  TextInput: {
+    width: "100%",
+    maxWidth: 300,
+    height: 50,
     padding: 10,
     marginLeft: 20,
-  }
-
+  },
 });
 
