@@ -148,7 +148,20 @@ const resources = ({}) => {
 const account = ({}) => {
   return(
     <View style={styles.container}>
-      <Text>imagine account</Text>
+      <View style={styles.myAccount}>
+      <TouchableOpacity style={{
+        paddingBottom: 30,
+            }}>Your Account</TouchableOpacity>
+      <TouchableOpacity style={{
+        paddingBottom: 30,
+      }}>Past Orders</TouchableOpacity>
+      <TouchableOpacity style={{
+        paddingBottom: 30,
+      }}>Notifications</TouchableOpacity>
+      <TouchableOpacity style={{
+        paddingBottom: 10,
+      }}>Settings</TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -254,5 +267,14 @@ const styles = StyleSheet.create({
     padding: 10,
     marginLeft: 20,
   },
+  myAccount: {
+    borderRadius: 30,
+    width: 300,
+    height: 300,
+    backgroundColor:"#c6ebc9",
+    alignItems:'center',
+    justifyContent:'center',
+    fontSize: 30,
+  }
 });
 
