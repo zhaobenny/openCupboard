@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, SafeAreaView, FlatList } from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, SafeAreaView, FlatList, Image} from 'react-native';
 import 'react-native-gesture-handler';
 import React, { useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
@@ -34,7 +34,16 @@ const login =  ({ navigation }) => {
   const [password, setPassword] = useState('');
   return (
       <View style={styles.container}>
-          <Text>INSERT PNG</Text>
+           <Image
+            source={require('./assets/title.png')}
+            style={{
+              resizeMode: "contain",
+              maxWidth: "100%",
+              maxHeight: "20%",
+              width: "100%",
+              height: "100%",
+            }}
+          />
           <StatusBar style="auto" />
           <View style={styles.inputView}>
             <TextInput
@@ -73,23 +82,15 @@ const login =  ({ navigation }) => {
 
 
 const Tab = createBottomTabNavigator();
-function MyTabs() {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={home} />
-      <Tab.Screen name="weekly" component={weekly} />
-    </Tab.Navigator>
-  );
-}
 
-
+// this is really for tabs
 const home = ({}) => {
   return(
     <Tab.Navigator>
       <Tab.Screen name="Home" component={homeComponent} />
-      <Tab.Screen name="weekly" component={weekly} />
-      <Tab.Screen name="resources" component={resources} />
-      <Tab.Screen name="account" component={account} />
+      <Tab.Screen name="Weekly" component={weekly} />
+      <Tab.Screen name="Resources" component={resources} />
+      <Tab.Screen name="Account" component={account} />
     </Tab.Navigator>
   )
 }
