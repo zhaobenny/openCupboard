@@ -27,6 +27,8 @@ export default function App() {
       component={home} />
       <Stack.Screen name="Weekly"
       component={weekly} />
+      <Stack.Screen name="childrenPage"
+      component={childrenPage} />
     </Stack.Navigator>
   </NavigationContainer>
   )
@@ -189,11 +191,26 @@ const homeComponent = ({}) => {
   )
 }
 
-const resources = ({}) => {
+const childrenPage = ({}) => {
   return(
     <View style={styles.container}>
       <View style={styles.myAccount}>
-      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24, fontWeight: 'bold'}}>Children's Programs</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.container}><Text style={{fontSize: 24, fontWeight: 'bold', margin: 10,}}>Select a program to find out more</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Baby Steps {'\n'}Age 0-2</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Preschooler Packs {'\n'}Age 3-5</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Grade Schooler Packs {'\n'}Age 6-12</Text></TouchableOpacity>
+      </View>
+    </View>
+    )
+}
+
+const resources = ({ navigation }) => {
+  return(
+    <View style={styles.container}>
+      <View style={styles.myAccount}>
+      <TouchableOpacity style={styles.settingItem}><Text onPress={() =>
+            navigation.navigate('childrenPage')} 
+            style={{fontSize: 24, fontWeight: 'bold'}}>Children's Programs</Text></TouchableOpacity>
       <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Upcoming Events</Text></TouchableOpacity>
       <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Greater Vancouver Food Bank Announcements</Text></TouchableOpacity>
       <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Community Agency Partners</Text></TouchableOpacity>
@@ -224,7 +241,6 @@ const weekly =  ({ navigation }) => {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
       title: 'Assorted Season Fruits',
       text: 'BC Tree Fruits',
-      image: './assets/icon.png',
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
