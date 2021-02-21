@@ -36,7 +36,7 @@ const login =  ({ navigation }) => {
           <View style={styles.inputView}>
             <TextInput
               style={styles.TextInput}
-              placeholder="Email."
+              placeholder="Email"
               placeholderTextColor="#003f5c"
               onChangeText={(email) => setEmail(email)}
             />
@@ -44,15 +44,14 @@ const login =  ({ navigation }) => {
           <View style={styles.inputView}>
             <TextInput
               style={styles.TextInput}
-              placeholder="Password."
+              placeholder="Password"
               placeholderTextColor="#003f5c"
               secureTextEntry={true}w
               onChangeText={(password) => setPassword(password)}
             />
           </View>
           <View >
-            <Button title="Outline button"
-            type="outline"
+            <Button title="Sign In"
             onPress={() =>
               navigation.navigate('Home')
             }
@@ -78,15 +77,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   inputView: {
-    borderRadius: 30,
     width: "100%",
+    maxWidth: 300,
     height: 45,
     marginBottom: 20,
     alignItems: "center",
+    borderBottomWidth: 0.5,
   },
   TextInput: {
+    width: "100%",
+    maxWidth: 300,
     height: 50,
-    flex: 1,
     padding: 10,
     marginLeft: 20,
   }
