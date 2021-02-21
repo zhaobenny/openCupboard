@@ -121,7 +121,7 @@ const ForgotPassword =  ({ navigation }) => {
         <View style={{marginTop: 20}}>
             <TouchableOpacity style={styles.SignIn}
               onPress={() =>
-              navigation.navigate('Home')
+              navigation.navigate('Login')
               }
             >
               <Text style={{
@@ -211,6 +211,8 @@ const account = ({}) => {
 }
 
 const weekly =  ({ navigation }) => {
+  // this is crap
+  // i know
   const DATA = [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
