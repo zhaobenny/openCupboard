@@ -27,7 +27,11 @@ export default function App() {
       component={home} />
       <Stack.Screen name="Weekly"
       component={weekly} />
+      <Stack.Screen name="childrenPage"
+      component={childrenPage} />
     </Stack.Navigator>
+    <Stack.Screen name="childrenPage"
+    component={childrenPage}></Stack.Screen>
   </NavigationContainer>
   )
 }
@@ -140,6 +144,7 @@ const Tab = createBottomTabNavigator();
 // this is really for tab navigation
 const home = ({}) => {
   return(
+    
     <Tab.Navigator
     tabBarOptions={{
       style: {
@@ -197,10 +202,31 @@ const homeComponent = ({}) => {
   )
 }
 
-const resources = ({}) => {
+const childrenPage = ({}) => {
   return(
     <View style={styles.container}>
-      <Text>imagine resources</Text>
+      <View style={styles.myAccount}>
+      <TouchableOpacity style={styles.container}><Text style={{fontSize: 24, fontWeight: 'bold', paddingBottom: 100, margin: 10}}>Select a program to find out more</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Baby Steps {'\n'}Age 0-2</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Preschooler Packs {'\n'}Age 3-5</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Grade Schooler Packs {'\n'}Age 6-12</Text></TouchableOpacity>
+      </View>
+    </View>
+    )
+}
+
+const resources = ({ navigation }) => {
+  return(
+    <View style={styles.container}>
+      <View style={styles.myAccount}>
+      <TouchableOpacity style={styles.settingItem}><Text onPress={() =>
+            navigation.navigate('childrenPage')} 
+            style={{fontSize: 24, fontWeight: 'bold'}}>Children's Programs</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Upcoming Events</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Greater Vancouver Food Bank Announcements</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24}}>Community Agency Partners</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.settingItem}><Text style={{fontSize: 24, fontWeight: 'bold'}}>Need More Support</Text></TouchableOpacity>      
+      </View>
     </View>
   )
 }
@@ -219,18 +245,22 @@ const account = ({}) => {
 }
 
 const weekly =  ({ navigation }) => {
+  // this is crap
+  // i know
   const DATA = [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'First Item',
+      title: 'Assorted Season Fruits',
+      text: 'BC Tree Fruits',
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Second Item',
+      title: '2021 Canley Cup',
+      text: "Vancouver District Students' Council",
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
+      title: 'Canned Soup Recipe',
     },
     {
       id: '58694a0f-3da1-411f-bd96-145571e29d72',
@@ -259,7 +289,7 @@ const weekly =  ({ navigation }) => {
   const renderItem = ({ item }) => (
     <Item title={item.title} />
   );
-
+  
   return(
     <SafeAreaView style={styles.container}>
         <Text style={{
