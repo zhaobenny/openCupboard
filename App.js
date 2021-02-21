@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View, TouchableOpacity, SafeAreaView, FlatList, Image} from 'react-native';
+import { StyleSheet, Text, TextInput, View, TouchableOpacity, SafeAreaView, FlatList, Image, Button} from 'react-native';
 import 'react-native-gesture-handler';
 import React, { useState} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
@@ -65,6 +65,26 @@ const login =  ({ navigation }) => {
               onChangeText={(password) => setPassword(password)}
             />
           </View>
+          <View style={
+            {
+              width: "100%",
+              maxWidth: 300,
+              alignItems: "left",
+            }
+          }>
+            <TouchableOpacity
+              onPress={() =>
+              navigation.navigate('ForgotPassword')
+              }
+            >
+              <Text style={{
+              paddingBottom: 10,
+              fontSize:11,
+              color: "black",
+            }}
+            >Forgot password?</Text>
+            </TouchableOpacity>
+          </View>
           <View>
           <TouchableOpacity style={styles.SignIn}
             onPress={() =>
@@ -83,6 +103,38 @@ const login =  ({ navigation }) => {
 }
 
 
+const ForgotPassword =  ({ navigation }) => {
+  return(
+      <View style={styles.container}>
+        <View style={{marginBottom: 20}}>
+          <Text style={{fontSize: 36, marginBottom: 25,}}>Password reset</Text>
+          <Text>Forgot Password?</Text>
+          <Text>Please enter the email used to sign up and we'll send you'll a reset link</Text>
+        </View>
+
+        <View style={styles.input}>
+          <TextInput
+              style={styles.TextInput}
+              placeholder="Email"
+              placeholderTextColor="#003f5c"
+          />
+        </View>
+        <View style={{marginTop: 20}}>
+            <TouchableOpacity style={styles.SignIn}
+              onPress={() =>
+              navigation.navigate('Home')
+              }
+            >
+              <Text style={{
+                fontSize:16,
+                color: "black",
+              }}
+              >Continue</Text>
+            </TouchableOpacity>
+          </View>
+      </View>
+  )
+}
 
 const Tab = createBottomTabNavigator();
 
@@ -224,34 +276,6 @@ const weekly =  ({ navigation }) => {
   )
 }
 
-const ForgotPassword =  ({ navigation }) => {
-  return(
-      <View style={styles.container}>
-      <Text>Password reset</Text>
-
-        <h2>Forgot Password?</h2>
-        <Text>Please enter the email used to sign up and we'll send you'll a reset link</Text>
-
-        <View style={styles.input}>
-            <TextInput
-              style={styles.TextInput}
-              placeholder="Email."
-              placeholderTextColor="#003f5c"
-              onChangeText={(email) => setEmail(email)}
-            />
-          </View>
-
-          <View style={styles.Continue}>
-            <Button onPress={() =>
-              navigation.navigate('Login')
-            }title="Continue"
-            type="outline"
-            />
-          </View>
-        </View>
-  )
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -283,27 +307,15 @@ const styles = StyleSheet.create({
     padding: 10,
     marginLeft: 20,
   },
-  Button: {
-    width: 50,
-  },
+
   forgot_button:{
     color: '#6495ed',
   },
+
   forgotPage:{
     flex: 1,
     backgroundColor: '#f0e2d0',
     alignItems: 'center',
   },
-  Continue:{
-    borderRadius: 10,
-    height: 50,
-    width: 300,
-    backgroundColor:"#c6ebc9",
-    alignItems:'center',
-    justifyContent:'bottom',
-  },
-  input:{
-    marginTop: 50,
-  }
 });
 
