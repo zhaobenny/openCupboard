@@ -81,9 +81,33 @@ const Home =  ({ navigation }) => {
 
 const ForgotPassword =  ({ navigation }) => {
   return(
-      <View style={styles.container}>
-        <h1>Forgot Password?</h1>
-      </View>
+      <View style={styles.forgotPage}>
+        <h6 style={styles.passReset}>Password reset</h6>
+        <div style={styles.link_home}>
+        <h6 onPress={() =>
+            navigation.navigate('Home')
+          }>Sign in</h6>
+        </div>
+        <h2>Forgot Password?</h2>
+        <h4>Please enter the email used to sign up and we'll send you'll a reset link</h4>
+          
+        <View style={styles.inputView}>
+            <TextInput
+              style={styles.TextInput}
+              placeholder="Email."
+              placeholderTextColor="#003f5c"
+              onChangeText={(email) => setEmail(email)}
+            />
+          </View>
+        
+          <View >
+            <Button title="Continue"
+            type="outline"
+            />
+          </View>
+        </View>
+      
+      
   )
 }
 
@@ -112,7 +136,12 @@ const styles = StyleSheet.create({
   },
   forgot_button:{
     color: '#6495ed',
-  }
-
+  },
+  forgotPage:{
+    flex: 1,
+    backgroundColor: '#f0e2d0',
+    alignItems: 'center',
+  },
+  
 });
 
