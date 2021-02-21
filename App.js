@@ -82,16 +82,12 @@ const Home =  ({ navigation }) => {
 const ForgotPassword =  ({ navigation }) => {
   return(
       <View style={styles.forgotPage}>
-        <h6 style={styles.passReset}>Password reset</h6>
-        <div style={styles.link_home}>
-        <h6 onPress={() =>
-            navigation.navigate('Home')
-          }>Sign in</h6>
-        </div>
+      <Text>Password reset</Text>     
+
         <h2>Forgot Password?</h2>
-        <h4>Please enter the email used to sign up and we'll send you'll a reset link</h4>
+        <Text>Please enter the email used to sign up and we'll send you'll a reset link</Text>
           
-        <View style={styles.inputView}>
+        <View style={styles.input}>
             <TextInput
               style={styles.TextInput}
               placeholder="Email."
@@ -100,14 +96,14 @@ const ForgotPassword =  ({ navigation }) => {
             />
           </View>
         
-          <View >
-            <Button title="Continue"
+          <View style={styles.Continue}>
+            <Button onPress={() =>
+              navigation.navigate('Login')
+            }title="Continue"
             type="outline"
             />
           </View>
         </View>
-      
-      
   )
 }
 
@@ -142,6 +138,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0e2d0',
     alignItems: 'center',
   },
-  
+  Continue:{
+    borderRadius: 10,
+    height: 50,
+    width: 300,
+    marginTop: 250,
+    backgroundColor:"#c6ebc9",
+    alignItems:'center',
+    justifyContent:'bottom',
+  },
+  input:{
+    marginTop: 50,
+  }
 });
 
