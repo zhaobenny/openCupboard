@@ -21,6 +21,7 @@ export default function App() {
         options={{ title: 'Welcome' }}
       />
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
     </Stack.Navigator>
   </NavigationContainer>
   )
@@ -79,7 +80,7 @@ const Home =  ({ navigation }) => {
 const ForgotPassword =  ({ navigation }) => {
   return(
       <View style={styles.container}>
-        <Text>Forgot Password?</Text>
+        <h1>Forgot Password?</h1>
       </View>
   )
 }
@@ -106,6 +107,9 @@ const styles = StyleSheet.create({
   },
   Button: {
     width: 50,
+  },
+  forgot_button:{
+    color: '6495ed',
   }
 
 });
