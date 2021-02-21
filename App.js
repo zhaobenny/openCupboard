@@ -31,7 +31,7 @@ const login =  ({ navigation }) => {
   const [password, setPassword] = useState('');
   return (
       <View style={styles.container}>
-          <Text>Hi does this work</Text>
+          <Text>INSERT PNG</Text>
           <StatusBar style="auto" />
           <View style={styles.inputView}>
             <TextInput
@@ -51,15 +51,7 @@ const login =  ({ navigation }) => {
             />
           </View>
           <View>
-          <TouchableOpacity
-            style={{
-              borderRadius: 10,
-              height: 50,
-              width: 300,
-              backgroundColor:"#c6ebc9",
-              alignItems:'center',
-              justifyContent:'center',
-            }}
+          <TouchableOpacity style={styles.SignIn}
             onPress={() =>
             navigation.navigate('Home')
             }
@@ -98,6 +90,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomWidth: 0.5,
   },
+  SignIn: {
+    borderRadius: 10,
+    height: 50,
+    width: 300,
+    backgroundColor:"#c6ebc9",
+    alignItems:'center',
+    justifyContent:'center',
+  },
+
   TextInput: {
     width: "100%",
     maxWidth: 300,
